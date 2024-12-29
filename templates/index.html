@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg-gray-900 text-white font-poppins">
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-semibold text-center mb-8">Car Price Prediction</h1>
+
+        <div class="max-w-lg mx-auto bg-gray-800 p-6 rounded-lg shadow-lg space-y-6">
+            <!-- Form for Car Details -->
+            <form id="car-form">
+                <div class="space-y-4">
+                    <div class="flex flex-col">
+                        <label for="present_price" class="text-lg font-medium">Present Price (in INR)</label>
+                        <input id="present_price" type="number" placeholder="Enter car price" class="input-field">
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="kms_driven" class="text-lg font-medium">Kilometers Driven</label>
+                        <input id="kms_driven" type="number" placeholder="Enter kilometers driven" class="input-field">
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="owner" class="text-lg font-medium">Owner Count</label>
+                        <input id="owner" type="number" placeholder="Enter number of previous owners (0 for new)" class="input-field">
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="car_age" class="text-lg font-medium">Car Age (in years)</label>
+                        <input id="car_age" type="number" placeholder="Enter the age of the car in years" class="input-field">
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="fuel_type" class="text-lg font-medium">Fuel Type</label>
+                        <select id="fuel_type" class="input-field">
+                            <option value="0">Select Fuel Type</option>
+                            <option value="1">Diesel</option>
+                            <option value="2">Petrol</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="seller_type" class="text-lg font-medium">Seller Type</label>
+                        <select id="seller_type" class="input-field">
+                            <option value="0">Select Seller Type</option>
+                            <option value="1">Individual</option>
+                            <option value="2">Dealer</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="transmission" class="text-lg font-medium">Transmission</label>
+                        <select id="transmission" class="input-field">
+                            <option value="0">Select Transmission</option>
+                            <option value="1">Manual</option>
+                            <option value="2">Automatic</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full py-2 mt-6 bg-indigo-600 hover:bg-indigo-700 rounded-lg text-white text-lg font-semibold transition-all duration-300">Predict Price</button>
+            </form>
+
+            <div id="result" class="mt-6 text-center hidden">
+                <h2 class="text-xl font-semibold">Estimated Car Price: <span id="price-result" class="text-green-400"></span></h2>
+                <p class="text-sm text-gray-300 mt-2">Example: For a car with 1 owner, 50000 km driven, 5 years old, and Diesel fuel, the predicted price will show here.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

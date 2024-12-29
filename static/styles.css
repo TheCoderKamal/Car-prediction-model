@@ -1,0 +1,32 @@
+    /* Custom Styling */
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .input-field {
+        background-color: #1F2937;
+        color: #E5E7EB;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #4B5563;
+        margin-top: 4px;
+    }
+    
+    .input-field:focus {
+        outline: none;
+        border-color: #6366F1;
+    }
+    
+    button:hover {
+        background-color: #4338CA;
+    }
+    
+    button:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    h1, h2, p {
+        color: #E5E7EB;
+    }
+    
